@@ -243,7 +243,7 @@ extension UIBezierPath {
     for _ in 0..<cogs * 2 {
       addArc(withCenter: .zero, radius: radius.0, startAngle: 0, endAngle: -angle, clockwise: false)
       apply(CGAffineTransform(rotationAngle: angle))
-      swap(&radius.0, &radius.1)
+      radius = (radius.1,radius.0)
     }
 
     self.translate(to: center)
